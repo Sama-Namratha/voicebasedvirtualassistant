@@ -91,7 +91,7 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     
       else if (lowerCommand.includes("hello")) {
         speak("Hello boss! Iam Viora.How can I help you Today.");
-      }else if (lowerCommand.includes("thankyou")) {
+      }else if (lowerCommand.includes("thank u")) {
             speak("Welcome! Have goodday Boss.");
       }
       
