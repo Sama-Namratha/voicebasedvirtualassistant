@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Assistant</title>
+  <style>
+
+body{
+
+    width:100%;
+    height:100%;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+#logo{
+    width:20%;
+}
+
+h1{
+    color:black;
+    
+}
+#name{
+    color: chocolate;
+    font-family: "Playwrite GB J Guides", serif;
+    font-weight: 400;
+    font-style: italic;;
+    font-size: xx-large;
+}
+#va{
+    color:brown;
+    font-size: 45;
+}
+
+#start-btn {
+      background-color: #1f4dd8;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #start-btn:hover {
+      background-color: #0c367f;
+    }
+  </style>
+</head>
+<body>
+  <!-- <h1>Voice Assistant</h1>
+  <p>Click the button and give a command!</p> -->
+  <img src="chatbot.png" alt="logo" id="logo" >
+  <h1>I,m <span id="name">Viora</span> <span id="va">, Your Virtual Assistant</span></h1>
+  <button id="start-btn">Start Listening</button>
+  <script src="java.js"></script>
+</body>
+</html>
