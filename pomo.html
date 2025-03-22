@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn to build a fully functional Pomodoro Timer App with circular progress bar, sound effects and interactive features using HTML, CSS and JavaScript." />
+    <meta
+      name="keywords"
+      content="pomodoro timer app, pomodoro app, timer app, productivity timer, circular progress bar" />
+    <link rel="icon" href="images/pomodoro-timer-app.png" />
+    <link rel="stylesheet" href="pomo.css" />
+    <title>Pomodoro Timer App</title>
+  </head>
+  <body>
+    <h1 class="title">Pomodoro Timer</h1>
+
+    <div class="timer-buttons">
+      <button class="timer-btn pomodoro active" data-time="1500">
+        Pomodoro
+      </button>
+      <button class="timer-btn short-break" data-time="300">Short Break</button>
+      <button class="timer-btn long-break" data-time="900">Long Break</button>
+    </div>
+
+    <div class="circle">
+      <div class="inner-circle">
+        <div class="countdown">
+          <h1></h1>
+          <p class="play-pause"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
