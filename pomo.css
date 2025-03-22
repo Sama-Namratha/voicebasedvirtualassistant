@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Tilt+Neon&display=swap");
+
+:root {
+  --bg-clr: #089ed9;
+  --font-clr: #f2f2f2;
+  --light-green: 145, 215, 137;
+  --dark-green: 10, 97, 84;
+  --light-red: 223, 78, 112;
+  --dark-red: 149, 9, 41;
+  --light-blue: 76, 83, 214;
+  --dark-blue: 19, 27, 175;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-clr);
+  padding: 10px;
+}
+
+.title {
+  width: max-content;
+  font-family: "Tilt Neon", serif;
+  font-size: clamp(1.8rem, 3vw, 4rem);
+  color: #fff;
+  font-weight: 400;
+  text-shadow: 0 0 5px #9eb3c0, 0 0 5px #848b90;
+  margin-bottom: 50px;
+  border-bottom: 3px solid #fff;
+  text-align: center;
+}
+
+.timer-buttons {
+  display: flex;
+  column-gap: 25px;
+  margin-bottom: 100px;
+}
+
+.timer-btn {
+  display: block;
+  width: max-width;
+  color: var(--font-clr);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 6px;
+  text-align: center;
+  transition: box-shadow 0.2s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+}
+
+.pomodoro {
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--dark-red)),
+    rgb(var(--light-red))
+  );
+}
+
+.pomodoro:hover,
+.pomodoro.active {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.7),
+    -2px -2px 16px rgba(var(--dark-red), 0.7),
+    2px 2px 16px rgba(var(--light-red), 0.7);
+}
+
+.short-break {
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--dark-green)),
+    rgb(var(--light-green))
+  );
+}
+
+.short-break:hover,
+.short-break.active {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.7),
+    -2px -2px 16px rgba(var(--dark-green), 0.7),
+    2px 2px 16px rgba(var(--light-green), 0.7);
+}
+
+.long-break {
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--dark-blue)),
+    rgb(var(--light-blue))
+  );
+}
+
+.long-break:hover,
+.long-break.active {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.7),
+    -2px -2px 16px rgba(var(--dark-blue), 0.7),
+    2px 2px 16px rgba(var(--light-blue), 0.7);
+}
+
+.circle {
+  position: relative;
+  width: 350px;
+  aspect-ratio: 1/1;
+  border: 5px solid;
+  border-radius: 50%;
+}
+
+.inner-circle {
+  position: absolute;
+  inset: 2%;
+  width: 96%;
+  height: 96%;
+  border-radius: inherit;
+}
+
+.countdown {
+  position: absolute;
+  inset: 0;
+  width: 94%;
+  height: 94%;
+  border-radius: inherit;
+  background: var(--bg-clr);
+  box-shadow: 14px 14px 25px #292929, -14px -14px 25px #434343;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown h1 {
+  font-size: 4rem;
+  color: var(--font-clr);
+  z-index: 5;
+}
+
+.play-pause {
+  font-size: 2rem;
+  color: var(--font-clr);
+  margin-top: 20px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.youtube-channel {
+  position: fixed;
+  width: 180px;
+  height: auto;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin: 14px;
+}
+
+.youtube-channel p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 8px;
+  transition: color 0.3s ease-in-out;
+}
+
+.youtube-channel p:hover {
+  color: chartreuse;
+  cursor: default;
+}
+
+.youtube-channel img {
+  width: 70px;
+  cursor: pointer;
+}
+
+.youtube-channel img:hover {
+  animation: tilt-n-move-shaking 0.25s infinite;
+}
+
+@keyframes tilt-n-move-shaking {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(5px, 5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0eg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@media (max-width: 950px) {
+  .title {
+    margin-bottom: 70px;
+  }
+
+  .timer-buttons {
+    margin-bottom: 80px;
+  }
+
+  .timer-btn {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .circle {
+    width: 280px;
+  }
+
+  .countdown h1 {
+    font-size: 3rem;
+  }
+
+  .play-pause {
+    font-size: 1.5rem;
+    margin-top: 14px;
+  }
+
+  .youtube-channel {
+    width: 160px;
+    margin: 14px;
+  }
+
+  .youtube-channel img {
+    width: 50px;
+  }
+}
+
+@media (max-width: 680px) {
+  .title {
+    margin-bottom: 50px;
+    margin-top: -70px;
+  }
+
+  .timer-buttons {
+    column-gap: 10px;
+  }
+
+  .circle {
+    width: 250px;
+  }
+
+  .countdown h1 {
+    font-size: 2.5rem;
+  }
+
+  .play-pause {
+    font-size: 1.2rem;
+    margin-top: 8px;
+  }
+
+  .youtube-channel {
+    margin: 4px;
+  }
+
+  .youtube-channel p {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 30px;
+  }
+
+  .title {
+    margin-bottom: 70px;
+    margin-top: -70px;
+  }
+
+  .circle {
+    width: 230px;
+  }
+}
